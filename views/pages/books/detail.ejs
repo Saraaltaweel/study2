@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <%results.forEach(data=>{%>
+           <p><%=data.title%></p> 
+         <p><%=data.author%></p>  
+           <p><%=data.isbn%></p>
+         <p><%=data.description%></p>  
+        <img src="<%=data.image_url%>" alt="">   
+               
+        
+    </form>
+    <form action="/delete/<%=data.id%>?_method=DELETE" method="POST">
+    <button type="submit">Delete</button>
+  </form>
+<form action="/updat/<%=data.id%>?_method=PUT" method="POST">
+    
+    <input type="text" name="title" value="<%=data.title%>">
+    <input type="text" name="author" value="<%=data.author%>">
+    <input type="text" name="isbn" value="<%=data.isbn%>">
+    <input type="text" name="description" value="<%=data.description%>">
+    <input type="text" name="image_url" value="<%=data.image_url%>"">
+    <button type="submit">Update</button>
+
+    </form>
+</form>
+        <%})%>
+    </div>
+</body>
+</html>
